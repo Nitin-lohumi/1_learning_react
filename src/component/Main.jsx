@@ -1,12 +1,13 @@
 import { useState } from "react";
 import Button from "./Button";
-function Main({ClickOnRule}){
+import Rules from "./Rules";
+function Main(){
   const [score,setScore]=useState(0);
   const[currentDice,SetCurrentDice]=useState(1);
   const [selectednumber,setSelectNumber]=useState();
   const [error,setError] =useState('');
   const[reset,setReset]=useState(false);
-  // const [ClickRule, SetClickRule]= useState(false);
+  const [ShowRule, SetShowRule]= useState(false);
   const genrateNumber =  (min,max)=>{
     return Math.floor(Math.random()*(max-min)+min);
   };
@@ -60,8 +61,10 @@ function Main({ClickOnRule}){
        src={`./src/Dice_images/dice_${currentDice}.png`} alt="dice" />
             <h2>click to dice</h2>
           <button onClick={ScoreReset}>reset</button>
-          <button onClick={ClickOnRule}>rule</button>
+          <button onClick={()=>SetShowRule((prev)=>!prev)}>{ShowRule?"hide":" Rules"}</button>
       </div>
+
+      {ShowRule && <Rules/>}
      </>
     )
 }
