@@ -63,7 +63,6 @@ function Main(){
           <button onClick={ScoreReset}>reset</button>
           <button onClick={()=>SetShowRule((prev)=>!prev)}>{ShowRule?"hide":" Rules"}</button>
       </div>
-
       {ShowRule && <Rules/>}
      </>
     )
