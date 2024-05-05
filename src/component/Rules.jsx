@@ -1,8 +1,5 @@
 import Button from "./Button";
 function Rules({return_home}){
-    function return_game(){
-        
-    }
     return(
         <>
      <div className="Main_1">
@@ -17,7 +14,6 @@ function Rules({return_home}){
         <div className="return">
         <button className="return_to_play" onClick={return_home}>Play</button>
         </div>
-        {/* {isStart ?(ClickRule?<Rules/>:<Main ClickOnRule={toggle_Rule}/>):<Front toggle ={toggleGame}/>} */}
       <div className="Main_rule">
       <div className="rule">
         <img 

@@ -6,6 +6,7 @@ function Main({ClickOnRule}){
   const [selectednumber,setSelectNumber]=useState();
   const [error,setError] =useState('');
   const[reset,setReset]=useState(false);
+  // const [ClickRule, SetClickRule]= useState(false);
   const genrateNumber =  (min,max)=>{
     return Math.floor(Math.random()*(max-min)+min);
   };
@@ -23,6 +24,14 @@ function Main({ClickOnRule}){
    else{
     setScore(prev=>prev-2)
    }
+   if(score>11){
+    alert("you win the game");
+    ScoreReset();
+   }
+   else if(score<-8){
+    alert("you lose the game");
+    ScoreReset();
+   }
   }
   const ScoreReset=()=>{
     setReset(()=>{
@@ -33,6 +42,7 @@ function Main({ClickOnRule}){
   }
     return (
      <>
+     
       <div className="Main_1">
         <div className="score_div">
               <h1>{score}</h1>
