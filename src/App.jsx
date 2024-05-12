@@ -8,7 +8,6 @@ function App() {
     SetStart((prop)=>!prop);
 
    }
-
   return(
    <>
   {
