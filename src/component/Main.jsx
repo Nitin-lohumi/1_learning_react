@@ -25,11 +25,11 @@ function Main(){
    else{
     setScore(prev=>prev-2)
    }
-   if(score>11){
+   if(score>29){
     alert("you win the game");
     ScoreReset();
    }
-   else if(score<-8){
+   else if(score<-40){
     alert("you lose the game");
     ScoreReset();
    }
@@ -43,7 +43,10 @@ function Main(){
   }
     return (
      <>
-     
+       <div className="note_div">
+       < h2 className="note1"><b>Note</b> - you can win when points will be greater then 30</h2> 
+        <h2 className="note2">you will lose the game when points will be greater then -40. </h2>
+       </div>
       <div className="Main_1">
         <div className="score_div">
               <h1>{score}</h1>
@@ -61,7 +64,7 @@ function Main(){
        src={`./src/Dice_images/dice_${currentDice}.png`} alt="dice" />
             <h2>click to dice</h2>
           <button onClick={ScoreReset}>reset</button>
-          <button onClick={()=>SetShowRule((prev)=>!prev)}>{ShowRule?"hide":" Rules"}</button>
+          <button onClick={()=>SetShowRule((prev)=>!prev)}>{ShowRule?"scroll Down⬇️":" Rules"}</button>
       </div>
       {ShowRule && <Rules/>}
      </>
